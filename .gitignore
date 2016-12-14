@@ -1,3 +1,11 @@
+# Folders #
+##########
+.idea/
+
+# IDE created files #
+#####################
+*.iml
+
 # Compiled source #
 ###################
 *.com
