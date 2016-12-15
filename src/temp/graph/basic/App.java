@@ -28,6 +28,15 @@ public class App
         System.out.println("Visits: ");
         theGraph.dfs();
         System.out.println();
+        
+        App a = new App();
+        a.gg();
+    }
+    
+    
+    public void gg()
+    {
+    	System.out.println("gg");
     }
 
 }
