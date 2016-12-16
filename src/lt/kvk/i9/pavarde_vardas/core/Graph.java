@@ -5,11 +5,12 @@ import lt.kvk.i9.pavarde_vardas.stack.Stack;
 
 public class Graph {
 
-    Stack theStack = new Stack();
-
     private int MAX_VERTS = 20;
+
+    Stack theStack = new Stack(MAX_VERTS);
+
     private Vertex vertexList[];    // vertex list
-    private int adjMat[][];
+    private int adjMat[][];         // edges array if 0 false, if 1 true
     private int nVerts;             // number of current vertices
 
 
@@ -28,18 +29,23 @@ public class Graph {
     //-------------------------------
     //      METHODS
     //-------------------------------
+
+    // add a vertex
     public void addVertex(String edgeName, String s1, String s2, String s3) {
         vertexList[nVerts++] = new Vertex(edgeName, new Data(s1, s2, s3));
     }
 
-
+    // connect vertexes
     public void addEdge(int start, int end) {
         adjMat[start][end] = 1;
         adjMat[end][start] = 1;
     }
 
+    // display vertex
     public void displayVertex(int v) {
-        System.out.println(vertexList[v].label);
+        System.out.print(vertexList[v].label + ":  ");
+        System.out.println(vertexList[v].data.toString());
+        System.out.println("-----------------------------------------------------------------");
     }
 
 
@@ -53,6 +59,7 @@ public class Graph {
 
 
     // depth first search
+    // paieska gilyn
     public void dfs() {
         vertexList[0].wasVisited = true;
         displayVertex(0);

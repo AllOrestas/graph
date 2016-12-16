@@ -18,11 +18,9 @@ public class Data
 
     @Override
     public String toString() {
-        return "lt.kvk.i9.pavarde_vardas.data.Data{" +
-                "name='" + name + '\'' +
-                ", value=" + value +
-                ", date='" + date + '\'' +
-                '}';
+        return "name= '" + name + '\'' +
+                ", value= " + value +
+                ", date= '" + date;
     }
 
     public String getName() {

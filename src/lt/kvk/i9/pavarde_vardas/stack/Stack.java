@@ -2,26 +2,29 @@ package lt.kvk.i9.pavarde_vardas.stack;
 
 public class Stack
 {
-    private final int SIZE = 20;
     private int[] st;
     private int top;
 
-    public Stack()
+    // size sets in Graph class
+    public Stack(int SIZE)
     {
         st = new int[SIZE];
         top = -1;
     }
 
+    // adds object in front
     public void push(int j)
     {
         st[++top] = j;
     }
 
+    // removes object from beginning
     public int pop()
     {
         return st[top--];
     }
 
+    //
     public int peek()
     {
         return st[top];
@@ -31,7 +34,5 @@ public class Stack
     {
         return (top == -1);
     }
-
-
 
 }
