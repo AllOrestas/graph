@@ -14,9 +14,11 @@ public class App {
 
         graph.addVertex("A", "s1", "s2", "s3");
         graph.addVertex("B", "s1", "s2", "s3");
+        graph.addVertex("C", "s1", "s2", "s3");
 
-        graph.addEdge(0, 1);
-        graph.addEdge(1, 0);
+        graph.addEdge(1, 0); // BA
+        graph.addEdge(0, 1); // BC
+        graph.addEdge(2, 0); // CA
 
         graph.dfs();
     }
