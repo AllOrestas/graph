@@ -1,14 +1,15 @@
 package graph.basic;
 
+
+
 /**
  * Created by Pikis on 11/27/2016.
  */
 public class App
 {
 
-
     public static void main(String[] args) {
-        Graph theGraph = new Graph();
+        graph.basic.Graph theGraph = new Graph();
 
         theGraph.addVertex('A');
         theGraph.addVertex('B');
@@ -28,6 +29,16 @@ public class App
         System.out.println("Visits: ");
         theGraph.dfs();
         System.out.println();
+        
+        App a = new App();
+        a.gg();
+    }
+    
+    
+    public void gg()
+    {
+    	System.out.println("gg");
     }
 
 }
+
