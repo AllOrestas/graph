@@ -28,7 +28,7 @@ public class Graph {
     //-------------------------------
     //      METHODS
     //-------------------------------
-    public void addVertex(char edgeName, String s1, String s2, String s3) {
+    public void addVertex(String edgeName, String s1, String s2, String s3) {
         vertexList[nVerts++] = new Vertex(edgeName, new Data(s1, s2, s3));
     }
 

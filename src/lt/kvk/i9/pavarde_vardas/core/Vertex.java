@@ -4,19 +4,19 @@ import lt.kvk.i9.pavarde_vardas.data.Data;
 
 public class Vertex
 {
-    public char label;
+    public String label;
     public boolean wasVisited;
     public Data data;
 
 
-    public Vertex(char lab, Data data)
+    public Vertex(String label, Data data)
     {
-        label = lab;
+        this.label = label;
         wasVisited = false;
         this.data = data;
     }
 
-    public char getLabel() {
+    public String getLabel() {
         return label;
     }
 
