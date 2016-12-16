@@ -1,3 +1,5 @@
+package stack;
+
 public class Stack
 {
     private final int SIZE = 20;

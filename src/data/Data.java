@@ -1,3 +1,5 @@
+package data;
+
 /**
  * Created by Pikis on 12/1/2016.
  */
@@ -16,7 +18,7 @@ public class Data
 
     @Override
     public String toString() {
-        return "Data{" +
+        return "data.Data{" +
                 "name='" + name + '\'' +
                 ", value=" + value +
                 ", date='" + date + '\'' +

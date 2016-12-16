@@ -1,6 +1,9 @@
-import data.Data;
+package core;
 
-class Graph {
+import data.Data;
+import stack.Stack;
+
+public class Graph {
 
     Stack theStack = new Stack();
 
