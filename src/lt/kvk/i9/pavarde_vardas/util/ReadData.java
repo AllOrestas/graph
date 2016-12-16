@@ -1,7 +1,7 @@
-package util;
+package lt.kvk.i9.pavarde_vardas.util;
 
 
-import core.Vertex;
+import lt.kvk.i9.pavarde_vardas.core.Vertex;
 
 import java.io.*;
 
@@ -15,7 +15,7 @@ public class ReadData {
     String line = "";
     String delimiter = ",";
 
-    String[] temp = null; // holds data road from selected line
+    String[] temp = null; // holds lt.kvk.i9.pavarde_vardas.data road from selected line
 
     // constructor
     public ReadData() {
@@ -29,7 +29,7 @@ public class ReadData {
      */
     public void writeData( File inputFile, Vertex vertex) {
         try {
-            // temp file write, used to temporary keep data
+            // temp file write, used to temporary keep lt.kvk.i9.pavarde_vardas.data
             bw = new BufferedWriter(new FileWriter(inputFile));
 
             // writes everything from list to tempFile

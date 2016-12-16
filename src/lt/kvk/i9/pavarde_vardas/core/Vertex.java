@@ -1,6 +1,6 @@
-package core;
+package lt.kvk.i9.pavarde_vardas.core;
 
-import data.Data;
+import lt.kvk.i9.pavarde_vardas.data.Data;
 
 public class Vertex
 {

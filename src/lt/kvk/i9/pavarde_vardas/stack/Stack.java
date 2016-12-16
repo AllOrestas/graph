@@ -1,4 +1,4 @@
-package stack;
+package lt.kvk.i9.pavarde_vardas.stack;
 
 public class Stack
 {

@@ -1,3 +1,5 @@
+package lt.kvk.i9.pavarde_vardas;
+
 /**
  * Main class
  */

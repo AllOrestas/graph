@@ -1,7 +1,7 @@
-package core;
+package lt.kvk.i9.pavarde_vardas.core;
 
-import data.Data;
-import stack.Stack;
+import lt.kvk.i9.pavarde_vardas.data.Data;
+import lt.kvk.i9.pavarde_vardas.stack.Stack;
 
 public class Graph {
 
@@ -59,7 +59,7 @@ public class Graph {
         theStack.push(0);
 
         while (!theStack.isEmpty()) {
-            // get unvisited vertex adjacent to stack top
+            // get unvisited vertex adjacent to lt.kvk.i9.pavarde_vardas.stack top
             int v = getAdjUnvisitedVertex(theStack.peek());
             if (v == -1)
                 theStack.pop();
