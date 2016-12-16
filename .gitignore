@@ -5,6 +5,7 @@
 # IDE created files #
 #####################
 *.iml
+out/
 
 # Compiled source #
 ###################
@@ -44,3 +45,4 @@
 ehthumbs.db
 Thumbs.db
 /bin/
+
