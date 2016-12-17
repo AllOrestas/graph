@@ -23,7 +23,7 @@ public class Stack {
         return st[top--];
     }
 
-    // return last
+    //grazina didziasiame taske esancio elemento indeksa
     public int peek() {
         return st[top];
     }

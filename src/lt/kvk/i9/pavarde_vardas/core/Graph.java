@@ -32,6 +32,7 @@ public class Graph {
 
     // add a vertex
     public void addVertex(String edgeName, String s1, String s2, String s3) {
+        // vertex'ai pridedami i vertex'u masyva
         vertexList[nVerts++] = new Vertex(edgeName, new Data(s1, s2, s3));
     }
 
@@ -52,8 +53,11 @@ public class Graph {
     // returns an unvisited vertex adjacent to v
     public int getAdjUnvisitedVertex(int v) {
         for (int j = 0; j < nVerts; j++)
+            // jei vertex'as matricos eilėje v ir stulpelyje j yra neaplankytas
+            // grąžinama jo vieta stulpelyje - j
             if (adjMat[v][j] == 1 && vertexList[j].wasVisited == false)
                 return j;
+        // jei nebėra nepalankytų vertex'ų, tai grąžinama -1
         return -1;
     }
 
@@ -61,24 +65,37 @@ public class Graph {
     // depth first search
     // paieska gilyn
     public void dfs() {
+        // pirmajį vertex'ą nustato kaip aplankytą
         vertexList[0].wasVisited = true;
+        // išvedamas į terminalą aplankytas vertex'as
         displayVertex(0);
+        // steke įvedama aplankyto vertex'o indeksas
+        // ++top - į kurią vieetą įrašomas vertex'o indeksas
         theStack.push(0);
 
+        // vykdoma kol stekas nepalieka tuščias
         while (!theStack.isEmpty()) {
             // get unvisited vertex adjacent to lt.kvk.i9.pavarde_vardas.stack top
+            // theStack.peek() metodas grazina didziasiame taske esancio elemento indeksa
             int v = getAdjUnvisitedVertex(theStack.peek());
             if (v == -1)
                 theStack.pop();
             else {
+                // nustato jog vertex'as v idekse aplankytas
                 vertexList[v].wasVisited = true;
+                // isvedamas vertex'as
                 displayVertex(v);
+                // i steka pridedamas elementas v
                 theStack.push(v);
             }
         }
 
+        // kai apeina visus vertex'as wasVisited nustato į null reikšmę
         for (int j = 0; j < nVerts; j++)
             vertexList[j].wasVisited = false;
-
     }
+
+    //depth first bigger search
+
+
 }
