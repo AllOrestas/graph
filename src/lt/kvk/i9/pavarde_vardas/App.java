@@ -24,15 +24,17 @@ public class App {
 
         graph.updateInputFile();
 
-        String str = "k";
-        String strToCompare = "5";
+        // compare strings which is bigger
+        String str = "10";
+        String strToCompare = "00";
         System.out.println((str.compareTo(strToCompare)));
-        if ((str.compareTo(strToCompare)) == -1) {
+        System.out.println("----------------------");
+        if ((str.compareTo(strToCompare)) < 0) {
             System.out.println(str + " daugiau uz " + strToCompare);
-        } else if ((str.compareTo(strToCompare)) == 1) {
+        } else if ((str.compareTo(strToCompare)) > 0) {
             System.out.println(str + " maziau uz " + strToCompare);
         } else {
-            System.out.println("lygu");
+            System.out.println((str.compareTo(strToCompare)));
         }
     }
 }
