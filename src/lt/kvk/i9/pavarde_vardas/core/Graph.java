@@ -2,6 +2,9 @@ package lt.kvk.i9.pavarde_vardas.core;
 
 import lt.kvk.i9.pavarde_vardas.data.Data;
 import lt.kvk.i9.pavarde_vardas.stack.Stack;
+import lt.kvk.i9.pavarde_vardas.util.ReadData;
+
+import java.io.File;
 
 public class Graph {
 
@@ -13,6 +16,9 @@ public class Graph {
     private int adjMat[][];         // edges array if 0 false, if 1 true
     private int nVerts;             // number of current vertices
 
+    // data to file object
+    private ReadData data = new ReadData();
+    String INPUT_FILE = "./res/result.csv";
 
     public Graph() {
         vertexList = new Vertex[MAX_VERTS];
@@ -98,4 +104,8 @@ public class Graph {
     //depth first bigger search
 
 
+    // write data to result file
+    public void updateInputFile() {
+        data.writeData(INPUT_FILE, vertexList);
+    }
 }

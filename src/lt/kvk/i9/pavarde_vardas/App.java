@@ -22,8 +22,11 @@ public class App {
 
 //        graph.dfs();
 
+        graph.updateInputFile();
+
         String str = "k";
         String strToCompare = "5";
+        System.out.println((str.compareTo(strToCompare)));
         if ((str.compareTo(strToCompare)) == -1) {
             System.out.println(str + " daugiau uz " + strToCompare);
         } else if ((str.compareTo(strToCompare)) == 1) {

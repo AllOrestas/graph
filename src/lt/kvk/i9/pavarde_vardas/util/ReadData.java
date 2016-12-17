@@ -27,19 +27,21 @@ public class ReadData {
      * Duomenų įterpimas
      * Įterpimas į pradinį duomenų failą
      */
-    public void writeData( File inputFile, Vertex vertex) {
+    public void writeData(String inputFile, Vertex vertex[]) {
         try {
             // temp file write, used to temporary keep lt.kvk.i9.pavarde_vardas.data
             bw = new BufferedWriter(new FileWriter(inputFile));
 
             // writes everything from list to tempFile
-            for (Vertex local = vertex; local != null; local = local) {
-                line = local.getData().getName() + delimiter +
-                        local.getData().getValue() + delimiter +
-                        local.getData().getDate();
+            for (int i = 0; i < vertex.length; i++) {
+                if (vertex[i] != null) {
+                    line = vertex[i].getData().getName() + delimiter +
+                            vertex[i].getData().getValue() + delimiter +
+                            vertex[i].getData().getDate();
 
-                bw.write(line);
-                bw.newLine();
+                    bw.write(line);
+                    bw.newLine();
+                }
             }
 
         } catch (FileNotFoundException e) {
