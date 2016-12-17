@@ -20,21 +20,11 @@ public class App {
         graph.addEdge(0, 1); // BC
         graph.addEdge(2, 0); // CA
 
-//        graph.dfs();
+        graph.dfs();
 
         graph.updateInputFile();
 
-        // compare strings which is bigger
-        String str = "10";
-        String strToCompare = "00";
-        System.out.println((str.compareTo(strToCompare)));
-        System.out.println("----------------------");
-        if ((str.compareTo(strToCompare)) < 0) {
-            System.out.println(str + " daugiau uz " + strToCompare);
-        } else if ((str.compareTo(strToCompare)) > 0) {
-            System.out.println(str + " maziau uz " + strToCompare);
-        } else {
-            System.out.println((str.compareTo(strToCompare)));
-        }
+
+        
     }
 }
