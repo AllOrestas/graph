@@ -17,14 +17,15 @@ public class App {
         graph.addVertex("C", "s1", "s2", "s3");
 
         graph.addEdge(1, 0); // BA
-        graph.addEdge(0, 1); // BC
+//        graph.addEdge(0, 1); // AB
         graph.addEdge(2, 0); // CA
 
         graph.dfs();
+        graph.printEdge();
 
         graph.updateInputFile();
 
 
-        
+
     }
 }
