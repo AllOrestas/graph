@@ -10,7 +10,7 @@ public class Stack {
     // size sets in Graph class
     public Stack(int SIZE) {
         st = new int[SIZE];
-        top = -1;
+        top = 0;
     }
 
     // adds object in front
@@ -29,7 +29,7 @@ public class Stack {
     }
 
     public boolean isEmpty() {
-        return (top == -1);
+        return (top == 0);
     }
 
 }
