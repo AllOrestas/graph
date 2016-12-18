@@ -14,8 +14,11 @@ public class Arr {
         arr.printArr();
         arr.addByOne();
         arr.printArr();
-        arr.addEdge(5, 4);
+        arr.addByOne();
         arr.printArr();
+        arr.addByOne();
+        arr.printArr();
+//        arr.printArr();
     }
 
     int rows = 0;
@@ -23,7 +26,7 @@ public class Arr {
     private ArrayList<ArrayList<Integer>> adjMat = new ArrayList<ArrayList<Integer>>();
 
     // fill adjMat
-    public void fill(int row, int column) {
+    public void fill(int column, int row) {
         for (int i = 0; i < row; i++) {
             adjMat.add(new ArrayList<Integer>());
             rows++;

@@ -48,7 +48,7 @@ public class Graph {
     }
 
     // connect vertexes
-    public void addEdge(int start, int end) {
+    public void addEdge(int end, int start) {
         adjMat.get(start).set(end, 1);
         adjMat.get(end).set(start, 1);
     }
@@ -91,12 +91,12 @@ public class Graph {
     // paieska gilyn
     public void dfs() {
         // pirmajį vertex'ą nustato kaip aplankytą
-        find(1).wasVisited = true;
+        find(0).wasVisited = true;
         // išvedamas į terminalą aplankytas vertex'as
-        displayVertex(1);
+        displayVertex(0);
         // steke įvedama aplankyto vertex'o indeksas
         // ++top - į kurią vieetą įrašomas vertex'o indeksas
-        theStack.push(1);
+        theStack.push(0);
 
         // vykdoma kol stekas nepalieka tuščias
         while (!theStack.isEmpty()) {
@@ -133,5 +133,14 @@ public class Graph {
             if (local.id == id)
                 return local;
         return null;
+    }
+
+
+    // print all edges
+    public void printEdge() {
+        for (int i = 0; i < adjMat.size(); i++) {
+            System.out.println(adjMat.get(i).toString());
+        }
+        System.out.println();
     }
 }
