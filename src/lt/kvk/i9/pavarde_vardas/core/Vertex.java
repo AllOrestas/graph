@@ -27,4 +27,13 @@ public class Vertex
     public Data getData() {
         return data;
     }
+
+    @Override
+    public String toString() {
+        return "Vertex{" +
+                "label='" + label + '\'' +
+                ", wasVisited=" + wasVisited +
+                ", " + data.toString() +
+                '}';
+    }
 }

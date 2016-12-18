@@ -20,7 +20,9 @@ public class App {
         graph.addEdge(0, 1); // BC
         graph.addEdge(2, 0); // CA
 
-//        graph.dfs();
+        graph.dfs();
+
+        graph.printAllVertex();
 
         graph.updateInputFile();
 

@@ -12,18 +12,23 @@ public class Graph {
 
     Stack theStack = new Stack(MAX_VERTS);
 
-    private Vertex vertexList[];    // vertex list
+    public Vertex vertexList[];    // vertex list
     private int adjMat[][];         // edges array if 0 false, if 1 true
     private int nVerts;             // number of current vertices
 
     // data to file object
     private ReadData data = new ReadData();
-    String INPUT_FILE = "./res/result.csv";
+    String INPUT_FILE = "./res/duomenys5.csv";
+    String OUTPUT_FILE = "./res/result.csv";
 
     public Graph() {
         vertexList = new Vertex[MAX_VERTS];
         adjMat = new int[MAX_VERTS][MAX_VERTS];
         nVerts = 0;
+
+        // read from resources file
+        readFromResFile();
+
         for (int j = 0; j < MAX_VERTS; j++) {
             for (int k = 0; k < MAX_VERTS; k++) {
                 adjMat[j][k] = 0;
@@ -106,6 +111,33 @@ public class Graph {
 
     // write data to result file
     public void updateInputFile() {
-        data.writeData(INPUT_FILE, vertexList);
+        data.writeData(OUTPUT_FILE, vertexList);
+    }
+
+    public void readFromResFile() {
+        data.readData(INPUT_FILE, this);
+    }
+
+    public void printEdges() {
+
+    }
+
+    public void printAllVertex() {
+        for (int i = 0; i < vertexList.length; i++) {
+            if (vertexList[i] != null) {
+                System.out.println(vertexList[i].toString());
+            } else {
+                break;
+            }
+        }
+    }
+
+
+    public int getnVerts() {
+        return nVerts;
+    }
+
+    public void setnVerts(int nVerts) {
+        this.nVerts = nVerts;
     }
 }

@@ -1,7 +1,9 @@
 package lt.kvk.i9.pavarde_vardas.util;
 
 
+import lt.kvk.i9.pavarde_vardas.core.Graph;
 import lt.kvk.i9.pavarde_vardas.core.Vertex;
+import lt.kvk.i9.pavarde_vardas.data.Data;
 
 import java.io.*;
 
@@ -22,6 +24,29 @@ public class ReadData {
 
     }
 
+
+    public void readData(String file, Graph graph) {
+        try {
+            br = new BufferedReader(new FileReader(file));
+            while ((line = br.readLine()) != null) {
+                temp = line.split(delimiter);
+                graph.vertexList[graph.getnVerts()] = new Vertex("A"+ graph.getnVerts(), new Data(temp[0], temp[1], temp[2]));
+                graph.setnVerts(graph.getnVerts() + 1);
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
     /**
      * Duomenų įterpimas
