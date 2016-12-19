@@ -5,9 +5,9 @@ package lt.kvk.i9.pavarde_vardas.data;
  */
 public class Data
 {
-    String name;
-    String value;
-    String date;
+    public String name;
+    public String value;
+    public String date;
 
     public Data(String name, String value, String date)
     {

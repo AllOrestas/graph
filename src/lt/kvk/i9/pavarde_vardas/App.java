@@ -18,6 +18,10 @@ public class App {
         graph.addEdge(1, 3); //OG
         graph.addEdge(2, 4); //LK
         
+        
+        graph.deleteMax();
+        //graph.deleteLinks(4);
+        
         graph.dfs();
         
     }

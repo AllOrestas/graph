@@ -4,17 +4,19 @@ import lt.kvk.i9.pavarde_vardas.data.Data;
 import lt.kvk.i9.pavarde_vardas.stack.Stack;
 import lt.kvk.i9.pavarde_vardas.util.ReadData;
 
-import java.io.File;
 
 public class Graph {
 
     private int MAX_VERTS = 20;
 
     Stack theStack = new Stack(MAX_VERTS);
+    
+    ReadData r = new ReadData();
 
     public Vertex vertexList[];    // vertex list
     private int adjMat[][];         // edges array if 0 false, if 1 true
     private int nVerts;             // number of current vertices
+
 
     // data to file object
     private ReadData data = new ReadData();
@@ -103,8 +105,11 @@ public class Graph {
 
         // kai apeina visus vertex'as wasVisited nustato į null reikšmę
         for (int j = 0; j < nVerts; j++)
-            vertexList[j].wasVisited = false;
-    }
+        	if(vertexList[j] != null)
+        	{
+        		vertexList[j].wasVisited = false;
+        	}	
+        	}
 
     //depth first bigger search
 
@@ -131,7 +136,59 @@ public class Graph {
             }
         }
     }
+    
+    public void deleteLinks(int id)
+    {
+    		for(int i = 0; i < MAX_VERTS-1; i++) {
 
+                adjMat[id][i] = 0;
+                adjMat[i][id] = 0;
+            }
+    }
+    
+    public void deleteMax()
+    {
+    	Vertex tempBig = null;	// temp Vertex to comapre with others
+    	int maxId = 0;			// max id for deleting
+    	
+    	for(int i = 0; i < MAX_VERTS-1; i++) {
+    		if(vertexList[i] != null)
+    		{
+    				if(tempBig == null)		// if temp is null make tem first in array
+    				{
+    					tempBig = vertexList[i];
+    				}else
+    				{
+        				int a = compare(vertexList[i], tempBig);	// else comapre objects bigger gose to temp
+        				if(a > 0)
+        				{
+        					tempBig = vertexList[i];
+        					maxId = i;
+        				}
+    				}
+    		}else 
+    		{
+    			break;
+    		}
+    	}
+    	
+    	deleteLinks(maxId);		// deletes by id;
+    	
+    	vertexList[maxId] = null;	// sets all 0 at spesific 2d matrix at x and y
+    	
+    	r.writeData("duomenys5.csv",vertexList);	// writes new data to file.
+    }
+
+	public int compare(Vertex c1, Vertex c2)
+	{
+		int n = 0;
+		n = c1.data.name.compareTo(c2.data.name);		//compares obj names if equals keeps going, else returns result
+		if(n != 0) return n;
+		n = c1.data.value.compareTo(c2.data.value);				//compares obj values if equals keeps going, else returns result
+		if(n !=0) return n;
+		return c1.data.date.compareTo(c2.data.date);	//lastly compares dates and returns
+
+	}
 
     public int getnVerts() {
         return nVerts;

@@ -7,9 +7,7 @@ import lt.kvk.i9.pavarde_vardas.data.Data;
 
 import java.io.*;
 
-/**
- * Created by Pikis on 12/1/2016.
- */
+
 public class ReadData {
 
     BufferedReader br = null;

@@ -1,6 +1,5 @@
 package lt.kvk.i9.pavarde_vardas.stack;
 
-import java.util.logging.Logger;
 
 public class Stack {
 
